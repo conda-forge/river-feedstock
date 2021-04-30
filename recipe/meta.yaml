@@ -10,7 +10,7 @@ source:
   sha256: 7eed32eb5631b6bd11d4e288c9393266ead13073b175b1d5dfcd005942780fb3
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -80,5 +80,6 @@ about:
 
 extra:
   recipe-maintainers:
+    - mxr-conda
     - oblute
     - rluria14
