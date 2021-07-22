@@ -57,8 +57,6 @@ test:
     - river.multioutput
     - river.naive_bayes
     - river.neighbors
-    - river.neural_nets
-    - river.neural_nets.activations
     - river.optim
     - river.optim.initializers
     - river.optim.losses
