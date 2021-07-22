@@ -41,6 +41,7 @@ test:
     - river.datasets
     - river.datasets.synth
     - river.drift
+    - river.dummy
     - river.ensemble
     - river.evaluate
     - river.expert
@@ -56,7 +57,12 @@ test:
     - river.multioutput
     - river.naive_bayes
     - river.neighbors
+    - river.neural_nets
+    - river.neural_nets.activations
     - river.optim
+    - river.optim.initializers
+    - river.optim.losses
+    - river.optim.schedulers
     - river.preprocessing
     - river.proba
     - river.reco
@@ -64,11 +70,10 @@ test:
     - river.stream
     - river.time_series
     - river.tree
-    - river.tree._attribute_test
-    - river.tree._nodes
-    - river.tree._split_criterion
     - river.tree.splitter
     - river.utils
+    - river.utils.math
+    - river.utils.pretty
 
 about:
   home: https://github.com/online-ml/river
