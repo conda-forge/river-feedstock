@@ -22,7 +22,6 @@ requirements:
     - python
     - cython >=0.29.6
     - numpy >=1.16.4
-    - dataclasses
   run:
     - python
     - {{ pin_compatible('numpy') }}
@@ -30,6 +29,7 @@ requirements:
     - scipy
     - cython >=0.29.6
     - pandas
+    - dataclasses
 
 test:
   imports:
