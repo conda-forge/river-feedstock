@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.7.0" %}
+{% set version = "0.7.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/online-ml/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 7eed32eb5631b6bd11d4e288c9393266ead13073b175b1d5dfcd005942780fb3
+  sha256: 56be6438e3d323245b6133175c19487c60724903dc6f5a0200ad12d5a7a9faff
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -29,6 +29,7 @@ requirements:
     - scipy
     - cython >=0.29.6
     - pandas
+    - dataclasses
 
 test:
   imports:
@@ -41,6 +42,7 @@ test:
     - river.datasets
     - river.datasets.synth
     - river.drift
+    - river.dummy
     - river.ensemble
     - river.evaluate
     - river.expert
@@ -57,6 +59,9 @@ test:
     - river.naive_bayes
     - river.neighbors
     - river.optim
+    - river.optim.initializers
+    - river.optim.losses
+    - river.optim.schedulers
     - river.preprocessing
     - river.proba
     - river.reco
@@ -64,11 +69,10 @@ test:
     - river.stream
     - river.time_series
     - river.tree
-    - river.tree._attribute_test
-    - river.tree._nodes
-    - river.tree._split_criterion
     - river.tree.splitter
     - river.utils
+    - river.utils.math
+    - river.utils.pretty
 
 about:
   home: https://github.com/online-ml/river
