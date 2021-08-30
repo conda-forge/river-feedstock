@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.7.1" %}
+{% set version = "0.8.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/online-ml/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 56be6438e3d323245b6133175c19487c60724903dc6f5a0200ad12d5a7a9faff
+  sha256: ea074d7c285112597a5d1ff3a76a763c9b3ab56f33b0cebdeebf37fd3432ea57
 
 build:
   number: 0
@@ -79,7 +79,7 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: "River is a Python library for online machine learning"
+  summary: River is a Python library for online machine learning
   dev_url: https://github.com/online-ml/river
 
 extra:
