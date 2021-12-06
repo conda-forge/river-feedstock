@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/online-ml/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ea074d7c285112597a5d1ff3a76a763c9b3ab56f33b0cebdeebf37fd3432ea57
+  sha256: 6b3cef7e628279675d52d4c5e3434b160c693d6bcc7ee5c705e4d3ee6d2c5c30
 
 build:
   number: 1
