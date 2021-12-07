@@ -1,0 +1,51 @@
+{% set name = "river" %}
+{% set version = "0.9.0" %}
+
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/river-{{ version }}.tar.gz
+  sha256: 3bc8694345bad8d1d967464d38ac23fbd62914284768553de7365debad3fee79
+
+build:
+  number: 0
+  skip: true   # [py<37]
+  script: {{ PYTHON }} -m pip install . -vv
+
+requirements:
+  build:
+    - {{ compiler('c') }}
+  host:
+    - cython
+    - numpy
+    - pip
+    - python
+  run:
+    - dataclasses  # [py==36]
+    - numpy >=1.18.1
+    - pandas >=1.0.1
+    - python
+    - scipy >=1.4.1
+    - {{ pin_compatible('numpy') }}
+
+test:
+  imports:
+    - river
+    - river.anomaly
+  commands:
+    - pip check
+  requires:
+    - pip
+
+about:
+  home: https://github.com/online-ml/river
+  summary: Online machine learning in Python
+  license: BSD-3-Clause
+  license_file: LICENSE
+
+extra:
+  recipe-maintainers:
+    - BubblyOrca
