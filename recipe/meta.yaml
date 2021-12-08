@@ -10,7 +10,7 @@ source:
   sha256: 5ae151ec497a56de984c1a90c679746575135b888eb1567e6a367426e87b5985
 
 build:
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -26,6 +26,7 @@ requirements:
     - python
     - {{ pin_compatible('numpy') }}
     - numpy >=1.21.4 
+    - scikit-learn
     - scipy
     - cython >=0.29.25
     - pandas
