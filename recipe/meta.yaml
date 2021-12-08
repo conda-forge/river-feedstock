@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.8.0" %}
+{% set version = "0.9.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://github.com/online-ml/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: ea074d7c285112597a5d1ff3a76a763c9b3ab56f33b0cebdeebf37fd3432ea57
+  sha256: 5ae151ec497a56de984c1a90c679746575135b888eb1567e6a367426e87b5985
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
@@ -85,5 +85,4 @@ about:
 extra:
   recipe-maintainers:
     - mxr-conda
-    - oblute
-    - rluria14
+    - bubblyorca
