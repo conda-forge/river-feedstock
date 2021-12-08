@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/online-ml/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 3b0801261321ef2d458f7a81f600d8104f6f468136f6c20cdd8a68d37e98ef38
+  sha256: 5ae151ec497a56de984c1a90c679746575135b888eb1567e6a367426e87b5985
 
 build:
   number: 0
