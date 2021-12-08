@@ -25,7 +25,8 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - numpy >=1.21.4 #- scikit-learn
+    - numpy >=1.21.4 
+    - scikit-learn
     - scipy
     - cython >=0.29.25
     - pandas
