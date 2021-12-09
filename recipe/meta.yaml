@@ -51,7 +51,6 @@ test:
     - river.feature_selection
     - river.imblearn
     - river.linear_model
-    - river.meta
     - river.metrics
     - river.metrics.cluster
     - river.multiclass
