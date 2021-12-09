@@ -46,7 +46,6 @@ test:
     - river.dummy
     - river.ensemble
     - river.evaluate
-    - river.expert
     - river.facto
     - river.feature_extraction
     - river.feature_selection
