@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.9.0" %}
+{% set version = "0.11.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/online-ml/{{ name }}/archive/{{ version }}.tar.gz
-  sha256: 5ae151ec497a56de984c1a90c679746575135b888eb1567e6a367426e87b5985
+  sha256: 7155eed38f02caa5ac5dfa00e11559b581eb67b857657f7a0a8743ae9d806704
 
 build:
   number: 0
@@ -25,7 +25,7 @@ requirements:
   run:
     - python
     - {{ pin_compatible('numpy') }}
-    - numpy >=1.21.4 
+    - numpy >=1.21.4
     - scikit-learn
     - scipy
     - cython >=0.29.25
