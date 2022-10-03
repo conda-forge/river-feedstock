@@ -33,15 +33,17 @@ requirements:
 test:
   imports:
     - river
+    - river._bandit
     - river.anomaly
     - river.base
+    - river.checks
     - river.cluster
     - river.compat
     - river.compose
+    - river.covariance
     - river.datasets
     - river.datasets.synth
     - river.drift
-    - river.dummy
     - river.ensemble
     - river.evaluate
     - river.facto
@@ -50,36 +52,27 @@ test:
     - river.imblearn
     - river.linear_model
     - river.metrics
-    - river.metrics.cluster
+    - river.metrics.multioutput
+    - river.misc
+    - river.model_selection
     - river.multiclass
     - river.multioutput
     - river.naive_bayes
     - river.neighbors
+    - river.neural_net
     - river.optim
-    - river.optim.initializers
-    - river.optim.losses
-    - river.optim.schedulers
     - river.preprocessing
     - river.proba
     - river.reco
-    - river.stats
-    - river.stream
-    - river.time_series
-    - river.optim
-    - river.optim.initializers
-    - river.optim.losses
-    - river.optim.schedulers
-    - river.preprocessing
-    - river.proba
-    - river.reco
+    - river.rules
     - river.stats
     - river.stream
     - river.time_series
     - river.tree
+    - river.tree.nodes
+    - river.tree.split_criterion
     - river.tree.splitter
     - river.utils
-    - river.utils.math
-    - river.utils.pretty
   commands:
     - pip check
   requires:
