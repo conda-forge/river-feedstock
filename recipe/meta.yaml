@@ -19,13 +19,13 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
   host:
-    - python >=3.8
+    - python
     - setuptools-rust
     - numpy
     - cython
     - pip
   run:
-    - python >=3.8
+    - python
     - scipy >=1.5
     - pandas >=1.3
     - {{ pin_compatible('numpy') }}
