@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.13.0" %}
+{% set version = "0.19.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,25 +7,25 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/river-{{ version }}.tar.gz
-  sha256: 9d068b7a9db32302fbd581af81315681dfe61774a5d777fb3d5982d3c3061340
+  sha256: 6b2192e27636334dd29eb43d6c46a53f9d7eef38eb8479a0797412b7c8c46020
 
 build:
   skip: true  # [py<38]
   script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('rust') }}
   host:
-    - python
+    - python >=3.8
     - setuptools-rust
     - numpy
     - cython
     - pip
   run:
-    - python
+    - python >=3.8
     - scipy >=1.5
     - pandas >=1.3
     - {{ pin_compatible('numpy') }}
@@ -33,8 +33,11 @@ requirements:
 test:
   imports:
     - river
-    - river._bandit
+    - river.active
     - river.anomaly
+    - river.bandit
+    - river.bandit.datasets
+    - river.bandit.envs
     - river.base
     - river.checks
     - river.cluster
@@ -44,14 +47,18 @@ test:
     - river.datasets
     - river.datasets.synth
     - river.drift
+    - river.drift.binary
+    - river.drift.datasets
     - river.ensemble
     - river.evaluate
     - river.facto
     - river.feature_extraction
     - river.feature_selection
+    - river.forest
     - river.imblearn
     - river.linear_model
     - river.metrics
+    - river.metrics.efficient_rollingrocauc
     - river.metrics.multioutput
     - river.misc
     - river.model_selection
@@ -59,16 +66,19 @@ test:
     - river.multioutput
     - river.naive_bayes
     - river.neighbors
+    - river.neighbors.ann
     - river.neural_net
     - river.optim
     - river.preprocessing
     - river.proba
     - river.reco
     - river.rules
+    - river.sketch
     - river.stats
     - river.stream
     - river.time_series
     - river.tree
+    - river.tree.mondrian
     - river.tree.nodes
     - river.tree.split_criterion
     - river.tree.splitter
