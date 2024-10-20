@@ -1,5 +1,5 @@
 {% set name = "river" %}
-{% set version = "0.13.0" %}
+{% set version = "0.21.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,27 +7,30 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/river-{{ version }}.tar.gz
-  sha256: 9d068b7a9db32302fbd581af81315681dfe61774a5d777fb3d5982d3c3061340
+  sha256: 359d5e9b267b07e025f0dee1e2621c6fa587a73152054387a506877e2d8f68be
 
 build:
-  skip: true  # [py<38]
-  script: {{ PYTHON }} -m pip install . -vv
-  number: 3
+  skip: true  # [py<39]
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+  number: 0
 
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ compiler('cxx') }}
     - {{ compiler('rust') }}
+    - {{ stdlib('c') }}
   host:
     - python
     - setuptools-rust
+    - poetry-core >=1.0.0
     - numpy
-    - cython
+    - cython <3
     - pip
   run:
     - python
-    - scipy >=1.5
-    - pandas >=1.3
+    - scipy >=1.12.1,<2.0.0
+    - pandas >=2.1.0,<3.0.0
     - {{ pin_compatible('numpy') }}
 
 test:
@@ -79,10 +82,11 @@ test:
     - pip
 
 about:
-  home: https://github.com/online-ml/river
+  home: https://riverml.xyz/
   summary: Online machine learning in Python
   license: BSD-3-Clause
   license_file: LICENSE
+  dev_url: https://github.com/online-ml/river
 
 extra:
   recipe-maintainers:
