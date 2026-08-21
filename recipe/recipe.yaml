@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: river
-  version: "0.25.0"
+  version: "0.26.1"
 
 package:
   name: ${{ name|lower }}
@@ -10,7 +10,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/river-${{ version }}.tar.gz
-  sha256: 8756afe90122285a6fe06c5a38fba143bd15f85d8e84f65b661a5edec3a14e3c
+  sha256: 2326f87f396801cfd8672ac02d9f9731c10e936696e7a0a1f89a378b994fba3f
 
 build:
   number: 0
@@ -40,9 +40,9 @@ requirements:
     - pip
   run:
     - python
-    - scipy >=1.16,<2
-    - numpy >=2.3.4,<3
-    - altair >=5.0.0
+    - scipy >=1.14.1,<2
+    - numpy >=2.2.5,<3
+    - narwhals >=2.0.0
 
 tests:
   - python:
@@ -76,7 +76,6 @@ tests:
         - river.multioutput
         - river.naive_bayes
         - river.neighbors
-        - river.neural_net
         - river.optim
         - river.preprocessing
         - river.proba
