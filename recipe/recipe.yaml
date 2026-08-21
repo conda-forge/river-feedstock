@@ -40,9 +40,9 @@ requirements:
     - pip
   run:
     - python
-    - scipy >=1.16,<2
-    - numpy >=2.3.4,<3
-    - altair >=5.0.0
+    - scipy >=1.14.1,<2
+    - numpy >=2.2.5,<3
+    - narwhals >=2.0.0
 
 tests:
   - python:
@@ -76,7 +76,6 @@ tests:
         - river.multioutput
         - river.naive_bayes
         - river.neighbors
-        - river.neural_net
         - river.optim
         - river.preprocessing
         - river.proba
