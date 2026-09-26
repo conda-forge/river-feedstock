@@ -13,7 +13,7 @@ source:
   sha256: 2326f87f396801cfd8672ac02d9f9731c10e936696e7a0a1f89a378b994fba3f
 
 build:
-  number: 0
+  number: 1
   skip:
     - match(python, "<3.11")
   script:
